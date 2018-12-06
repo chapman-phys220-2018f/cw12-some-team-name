@@ -29,7 +29,7 @@ def drdt(r, t, m=1, v=0.25, omega=1, F=0.18):
         F - driving force (default 0.18)
     """
     x, y = r[0], r[1]
-    return np.array([y, x-x**3-v*y+F*np.cos(omega*t)])
+    return np.array([y, (x-x**3-v*y+F*np.cos(omega*t))/m])
 
 def runge_kutta_4thOrd(r0, t, m=1, v=0.25, omega=1, F=0.18):
     """
